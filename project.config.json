@@ -16,7 +16,7 @@
       "disablePlugins": [],
       "outputPath": ""
     },
-    "uglifyFileName": true,
+    "uglifyFileName": false,
     "ignoreUploadUnusedFiles": true,
     "condition": false
   },

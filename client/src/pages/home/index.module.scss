@@ -1,0 +1,21 @@
+@import '~@/assece/styles/variable.scss';
+
+.HomeWrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  .UserAvatar {
+    position: absolute;
+    top: 20rpx;
+    left: 20rpx;
+    box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.3);
+  }
+}
+.CommonHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300rpx;
+  background-color: $primary-color;
+}

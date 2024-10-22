@@ -1,13 +1,11 @@
-import { useAccountPopup } from './useAccountPopup';
-import { Grid, NumberKeyboard, Popup, SafeArea, Swiper } from '@taroify/core';
+import { Grid, NumberKeyboard, Popup, SafeArea, Swiper, Tabs } from '@taroify/core';
 import styles from './index.module.scss';
 import React, { memo, useMemo, useState } from 'react';
-import { CONSUME_ITEM } from '@/components/Container/cpns/AccountPopup/constants';
 import { Image, Text, View } from '@tarojs/components';
 import classNames from 'classnames';
+import { CONSUME_ITEM } from '@/components/container/cpns/account-popup/constants';
+import { useAccountPopup } from './useAccountPopup';
 import './index.scss';
-
-export * from './useAccountPopup';
 
 const AccountPopup: React.FC = memo(() => {
   const { visible, hideAccountPopup, openNumberKeyboard } = useAccountPopup();
@@ -31,6 +29,10 @@ const AccountPopup: React.FC = memo(() => {
       rounded
       // style={{ borderRadius: '30rpx 30rpx 0 0' }}
     >
+      <Tabs value={0} onChange={() => {}}>
+        <Tabs.TabPane title='支出'>内容 1</Tabs.TabPane>
+        <Tabs.TabPane title='收入'>内容 2</Tabs.TabPane>
+      </Tabs>
       <Swiper>
         <Swiper.Item>
           <Grid bordered={false} square gutter={10}>

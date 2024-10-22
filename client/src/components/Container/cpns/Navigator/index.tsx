@@ -1,16 +1,22 @@
-import { getMenuButtonBoundingClientRect, getSystemInfoSync } from '@/components/Container/cpns/Navigator/utils';
+import { getMenuButtonBoundingClientRect, getSystemInfoSync } from '@/components/container/cpns/navigator/utils';
 import { Navbar } from '@taroify/core';
 import React, { memo } from 'react';
-import { View } from '@tarojs/components';
+import { Text, View } from '@tarojs/components';
 import './index.scss';
 
-export interface Props {
+export interface NavigatorProps {
   safeAreaInsetTop?: boolean;
-  title: string;
+  title?: string;
+  navLeftIcon?: React.ReactNode;
+  navRightIcon?: React.ReactNode;
+  navLeftText?: string;
+  navRightText?: string;
+  transparent?: boolean;
+  textColor?: string;
 }
 
-const Navigator: React.FC<Props> = memo((props) => {
-  const { safeAreaInsetTop = true, title } = props;
+const Navigator: React.FC<NavigatorProps> = memo((props) => {
+  const { safeAreaInsetTop = true, title, navLeftIcon, navLeftText, navRightIcon, navRightText } = props;
   const { statusBarHeight = 22 } = getSystemInfoSync();
   const menuButtonInfo = getMenuButtonBoundingClientRect();
   const navBarHeight = (menuButtonInfo.top - statusBarHeight) * 2 + menuButtonInfo.height;
@@ -18,9 +24,16 @@ const Navigator: React.FC<Props> = memo((props) => {
   return (
     <View className='navigator-wrapper'>
       <Navbar
-        title={title}
-        style={{ height: `${navBarHeight}px`, paddingTop: safeAreaInsetTop ? statusBarHeight + 'px' : 0 }}
-      />
+        title={<Text style={{ color: props.textColor }}>{title}</Text>}
+        style={{
+          height: `${navBarHeight}px`,
+          paddingTop: safeAreaInsetTop ? statusBarHeight + 'px' : 0,
+          backgroundColor: props.transparent ? 'transparent' : '#fff'
+        }}
+      >
+        {(navLeftIcon || navLeftIcon) && <Navbar.NavLeft icon={navLeftIcon}>{navLeftText}</Navbar.NavLeft>}
+        {(navRightIcon || navRightText) && <Navbar.NavRight icon={navRightIcon}>{navRightText}</Navbar.NavRight>}
+      </Navbar>
     </View>
   );
 });
