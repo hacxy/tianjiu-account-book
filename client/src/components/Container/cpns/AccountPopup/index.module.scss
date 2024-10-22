@@ -1,0 +1,24 @@
+.AccountPopup {
+  padding-top: 20rpx;
+  height: 85%;
+
+  .MoneyInputWrapper {
+    padding: 20rpx 10rpx;
+    box-sizing: border-box;
+    .MoneyInput {
+      width: 100%;
+      height: 100rpx;
+      border: 1rpx solid #ccc;
+      font-size: 50rpx;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 0 18rpx;
+      border-radius: 20rpx;
+      .MoneyValue {
+        margin-left: 10rpx;
+        color: orange;
+      }
+    }
+  }
+}

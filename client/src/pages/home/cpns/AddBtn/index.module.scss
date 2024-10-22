@@ -1,0 +1,9 @@
+.AddBtn {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(10rpx + env(safe-area-inset-bottom));
+  width: 130rpx;
+  height: 130rpx;
+  z-index: 999;
+}

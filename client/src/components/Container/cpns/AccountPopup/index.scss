@@ -1,0 +1,20 @@
+.account-popup {
+  .active {
+    .taroify-grid-item__content {
+      border: 8rpx solid #87ceeb;
+    }
+  }
+  .taroify-grid-item__content {
+    border-radius: 20rpx;
+    padding: 0rpx;
+    box-sizing: border-box;
+    box-shadow: 0rpx 3rpx 10rpx #ccc;
+    font-size: 30rpx;
+    image {
+      flex-shrink: 0;
+      margin-top: 10rpx;
+      width: 100rpx;
+      height: 100rpx;
+    }
+  }
+}
