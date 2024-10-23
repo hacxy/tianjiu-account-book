@@ -1,0 +1,23 @@
+.ProfileWrapper {
+  height: 100%;
+  .UserInfoCard {
+    margin-top: 20rpx;
+    padding: 20rpx;
+    border-radius: 20rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .UserName {
+      font-size: 34rpx;
+      font-weight: bold;
+      color: #fff;
+      margin-top: 20rpx;
+    }
+  }
+
+  .MenusWrapper {
+    padding: 20rpx;
+  }
+}

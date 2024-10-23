@@ -6,3 +6,10 @@ export const userLogin = () => {
     data: {}
   });
 };
+
+export const getUserInfo = () => {
+  return Taro.cloud.callFunction({
+    name: 'user-info',
+    data: {}
+  });
+};
